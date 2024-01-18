@@ -5,7 +5,6 @@ This project contains codes for the following paper:
     Kota Yoshida, Takeshi Fujino, "Model Extraction Attacks without Natural Images," ACNS Workshop on Security in Machine Learning and its Applications (SiMLA 2024).
 
 - Affiliations of authors: Ritsumeikan University, Japan  
-- Contact: y0sh1d4@fc.ritsumei.ac.jp
 
 ## Requirements
 - Deep learning-enabled PC (Large DRAMs, GPUs)

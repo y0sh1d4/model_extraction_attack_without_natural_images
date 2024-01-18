@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  main:
+    build: '.'
+    ports:
+      - '50020:8888'  # Jupyter server (Required to unique)
+      - '50021:5000'  # MLflow server (Required to unique)
+    volumes:
+      - '../workspace:/workspace'
+      - '../dataset:/dataset'
+      - '../data:/data'
+    working_dir: /workspace
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              device_ids: ['0']
+              capabilities: [gpu]

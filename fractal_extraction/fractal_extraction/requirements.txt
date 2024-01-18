@@ -1,0 +1,10 @@
+numpy==1.22.1
+scikit-learn==1.1.0
+flake8==4.0.1
+matplotlib==3.5.1
+seaborn==0.11.2
+hydra-core==1.1.2
+mlflow==1.25.1
+tensorflow_datasets==4.6.0
+opencv-python
+foolbox

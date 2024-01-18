@@ -1,0 +1,10 @@
+# install PyPI libraries
+notebook
+torchvision
+numpy
+pillow
+scikit-learn
+matplotlib
+tqdm
+ipdb
+onnx2torch

@@ -1,0 +1,10 @@
+from tensorflow/tensorflow:2.9.0-gpu-jupyter
+
+RUN     apt update && \
+        apt install -y \
+        libopencv-dev\
+        opencv-data
+
+ADD     requirements.txt .
+RUN     pip install --upgrade pip && \
+        pip install -r requirements.txt

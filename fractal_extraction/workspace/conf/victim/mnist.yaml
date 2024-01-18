@@ -1,0 +1,6 @@
+task_name:  mnist
+task_type:  mnist
+ds_path:    ${dataset_paths.${.task_name}}
+model:      small
+epoch:      30
+batch_size: 128

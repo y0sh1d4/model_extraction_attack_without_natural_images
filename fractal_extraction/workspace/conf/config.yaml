@@ -1,0 +1,38 @@
+hydra:
+  run:
+    dir: /data/hydra/run/${now:%Y-%m-%d}/${now:%H-%M-%S}
+  sweep:
+    dir: /data/hydra/multirun/${now:%Y-%m-%d}/${now:%H-%M-%S}
+
+defaults:
+  - _self_
+  - victim: mnist
+  - attack: mnist
+
+global_params:
+  mlflow_path:  file:///data/mlruns/
+  victim_model_path: /data/victim_models/${victim.task_name}
+  substitute_model_path: /data/substitute_models/${victim.task_name}_vs_${attack.task_name}/${victim.model}_to_${attack.model}
+
+dataset_paths:
+  mnist: /dataset/mnist
+  fashion_mnist: /dataset/fashion_mnist
+  fractaldb_1k: /dataset/fractal_pub/FractalDB-1k
+  fractaldb_60: /dataset/fractal_pub/fractaldb_cat60_ins1000
+  fractaldb28_1k: /dataset/FractalDB28-1000
+
+gv:
+  target: victim
+  round: 100
+  vis_samples: 10
+  last_conv_name: Conv_last
+
+create_AEs:
+  round: "range(60)"
+  num_samples: 5000
+  batch_size: 256
+  epsilons:
+    - 4/255.0
+    - 8/255.0
+    - 16/255.0
+    - 24/255.0

@@ -1,0 +1,10 @@
+task_name:  fractaldb_60
+task_type:  fractaldb
+ds_path:    ${dataset_paths.${.task_name}}
+model:      small
+epoch:      30
+batch_size: 128
+Early_stopping_patience: ${.epoch}
+query_size: 1000
+round:      60
+strategy:   random_query
